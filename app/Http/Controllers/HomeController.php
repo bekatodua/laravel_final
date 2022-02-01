@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $covid_stats = CovidStatistic::where(‘foreign_user_id’, auth()->user()->id)->get();
+        $covid_stats = CovidStatistic::where('foreign_user_id', auth()->user()->id)->get();
         return view('home');
         
     }
