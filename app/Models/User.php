@@ -41,4 +41,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    public function statistics();
+    {
+        return $this->hasMany(CovidStatistic::class, 'foreign_user_ID', 'id');
+    }
+    
 }
