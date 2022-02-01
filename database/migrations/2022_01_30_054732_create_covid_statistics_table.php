@@ -15,6 +15,8 @@ class CreateCovidStatisticsTable extends Migration
     {
         Schema::create('covid_statistics', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('foreign_user_ID');
+            $table->foreign('foreign_user_ID')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->string('country');
             $table->date('date');
             $table->bigint('case_amount')
