@@ -19,8 +19,7 @@ class CreateCovidStatisticsTable extends Migration
             $table->foreign('foreign_user_ID')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->string('country');
             $table->date('date');
-            $table->bigint('case_amount')
-            
+            $table->bigint('case_amount');
             $table->timestamps();
         });
     }
