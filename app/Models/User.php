@@ -42,7 +42,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     
-    public function statistics();
+    public function statistics()
     {
         return $this->hasMany(CovidStatistic::class, 'foreign_user_ID', 'id');
     }
